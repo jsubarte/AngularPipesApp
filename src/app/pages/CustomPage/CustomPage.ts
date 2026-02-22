@@ -1,14 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { heroes } from '../../data/heroes';
-import { TogglecasePipe } from '../../pipes/togglecase-pipe';
-import { CanflyPipe } from '../../pipes/canfly-pipe';
-import { HerocolorPipe } from '../../pipes/herocolor-pipe';
-import { HerotextcolorPipe } from '../../pipes/herotextcolor-pipe';
 import { TitleCasePipe } from '@angular/common';
-import { HerocreatorPipe } from '../../pipes/herocreator-pipe';
-import { HerosortbyPipe } from '../../pipes/herosortby-pipe';
+import { heroes } from '../../data/heroes';
 import { Hero } from '../../interfaces/Ihero';
-import { HerofilterPipe } from '../../pipes/herofilter-pipe';
+import {
+  CanflyPipe,HerocolorPipe,HerocreatorPipe,
+  HerofilterPipe,HerosortbyPipe,HerotextcolorPipe,
+  TogglecasePipe
+} from '../../pipes';
 
 @Component({
   selector: 'app-custom-page',
