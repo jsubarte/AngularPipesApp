@@ -4,10 +4,11 @@ import { TogglecasePipe } from '../../pipes/togglecase-pipe';
 import { CanflyPipe } from '../../pipes/canfly-pipe';
 import { HerocolorPipe } from '../../pipes/herocolor-pipe';
 import { HerotextcolorPipe } from '../../pipes/herotextcolor-pipe';
+import { TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-custom-page',
-  imports: [ TogglecasePipe, CanflyPipe, HerocolorPipe, HerotextcolorPipe ],
+  imports: [ TogglecasePipe, CanflyPipe, HerocolorPipe, HerotextcolorPipe, TitleCasePipe ],
   templateUrl: './CustomPage.html',
 })
 export default class CustomPage {
