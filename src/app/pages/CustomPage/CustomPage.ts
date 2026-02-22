@@ -3,10 +3,11 @@ import { heroes } from '../../data/heroes';
 import { TogglecasePipe } from '../../pipes/togglecase-pipe';
 import { CanflyPipe } from '../../pipes/canfly-pipe';
 import { HerocolorPipe } from '../../pipes/herocolor-pipe';
+import { HerotextcolorPipe } from '../../pipes/herotextcolor-pipe';
 
 @Component({
   selector: 'app-custom-page',
-  imports: [ TogglecasePipe, CanflyPipe, HerocolorPipe ],
+  imports: [ TogglecasePipe, CanflyPipe, HerocolorPipe, HerotextcolorPipe ],
   templateUrl: './CustomPage.html',
 })
 export default class CustomPage {

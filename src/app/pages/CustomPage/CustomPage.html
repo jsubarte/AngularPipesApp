@@ -67,6 +67,12 @@
             >
               {{ heroe.color | heroColor }}
             </span>
+            <span
+              class="text-xs w-44"
+              [style.color]="heroe.color | heroTextColor"
+            >
+              {{ heroe.color | heroColor }}
+            </span>
           </td>
           <td>{{ heroe.creator }}</td>
         </tr>
