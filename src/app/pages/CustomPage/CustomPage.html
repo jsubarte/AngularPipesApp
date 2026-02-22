@@ -17,8 +17,19 @@
 <div class="divider my-2"></div>
 
 <section class="my-2">
-  <h1 class="text-2xl font-bold">Filtrando por: XXX   Ordenando por: {{ sortBy() }}</h1>
+  <h1 class="text-2xl font-bold">Filtrando por: {{ searchQuery() }}   Ordenando por: {{ sortBy() }}</h1>
   <div class="flex gap-2 justify-end w-full">
+
+    <input
+      type="text"
+      class="input input-bordered w-full max-w-xs mt-2"
+      placeholder="Buscar héroe"
+      (input)="searchQuery.set(txtSearch.value)"
+      #txtSearch
+    >
+    <div class="flex flex-1"></div>
+
+
     <button
       class="btn btn-success"
       (click)="sortBy.set('id')"
@@ -65,7 +76,7 @@
       </tr>
     </thead>
     <tbody>
-      @for (heroe of heroes() | heroSortBy:sortBy(); track heroe.id) {
+      @for (heroe of heroes() | heroFilter:searchQuery() | heroSortBy:sortBy(); track heroe.id) {
         <tr>
           <th>{{ heroe.id }}</th>
           <td>{{ heroe.name }}</td>

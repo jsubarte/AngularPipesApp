@@ -8,21 +8,35 @@ import { TitleCasePipe } from '@angular/common';
 import { HerocreatorPipe } from '../../pipes/herocreator-pipe';
 import { HerosortbyPipe } from '../../pipes/herosortby-pipe';
 import { Hero } from '../../interfaces/Ihero';
+import { HerofilterPipe } from '../../pipes/herofilter-pipe';
 
 @Component({
   selector: 'app-custom-page',
-  imports: [ TogglecasePipe, CanflyPipe, HerocolorPipe, HerotextcolorPipe, TitleCasePipe, HerocreatorPipe, HerosortbyPipe ],
+  imports: [
+    TogglecasePipe,
+    CanflyPipe,
+    HerocolorPipe,
+    HerotextcolorPipe,
+    TitleCasePipe,
+    HerocreatorPipe,
+    HerosortbyPipe,
+    HerofilterPipe
+  ],
   templateUrl: './CustomPage.html',
 })
 export default class CustomPage {
-  name = signal('Joel Ubarte')
-  upperCase = signal(true)
 
-  heroes = signal(heroes)
+  name = signal<string>('Joel Ubarte')
+
+  upperCase = signal<boolean>(true)
+
+  heroes = signal<Hero[]>(heroes)
 
   sortBy = signal<keyof Hero | null>(null)
 
-  changeUpperCase() {
+  searchQuery = signal<string>('')
+
+  changeUpperCase(): void {
     this.upperCase.set(!this.upperCase())
   }
 
