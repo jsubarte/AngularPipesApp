@@ -1,9 +1,9 @@
 import { Component, input } from '@angular/core';
-import { ɵEmptyOutletComponent } from "@angular/router";
+
 
 @Component({
   selector: 'app-card',
-  imports: [ɵEmptyOutletComponent],
+  imports: [],
   templateUrl: './Card.html',
 })
 export class Card {
